@@ -12,6 +12,6 @@
       "*": ["node_modules/*"]
     }
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", "src/setup.ts", "src/dbInit.ts", "src/app.ts", "src/models/User.ts"],
   "exclude": ["node_modules"]
 }

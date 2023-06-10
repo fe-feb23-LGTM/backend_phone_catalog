@@ -19,11 +19,15 @@
     "express": "^4.18.2",
     "mysql2": "^3.3.3",
     "pg": "^8.11.0",
+    "pg-hstore": "^2.3.4",
     "reflect-metadata": "^0.1.13",
     "sequelize": "^6.32.0",
-    "sequelize-typescript": "^2.1.5"
+    "sequelize-typescript": "^2.1.5",
+    "sqlite3": "^5.1.6",
+    "tsc": "^2.0.4"
   },
   "devDependencies": {
+    "@types/sequelize": "^4.28.15",
     "@typescript-eslint/eslint-plugin": "^5.59.9",
     "eslint": "^8.42.0",
     "eslint-config-prettier": "^8.8.0",

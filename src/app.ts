@@ -1,12 +1,13 @@
 import express, { Request, Response } from 'express';
 import bodyParser from 'body-parser';
+import 'dotenv/config'
 
 const app = express();
-const port = process.env.PORT || 3001;
+const port = process.env.PORT;
 
 app.use(bodyParser.json());
 
-app.get('/', (req: Request, res: Response) => {
+app.get('/', (req, res) => {
   res.send('Hello, world!');
 });
 
