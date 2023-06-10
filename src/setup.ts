@@ -1,7 +1,7 @@
 'use strict';
 
-const { Phones } = require('./models/Phones');
-const { dbInit } = require('./dbInit');
+import { dbInit } from './dbInit';
+import { Phones } from './models/Phones';
 import phones from './phones/phones.json'
 
 

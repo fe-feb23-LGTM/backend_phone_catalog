@@ -1,12 +1,10 @@
-const { Sequelize } = require('sequelize');
+import { Sequelize } from "sequelize-typescript";
+import dotenv from 'dotenv';
+dotenv.config();
 
-const dbHost = process.env.DB_HOST;
-const dbName = process.env.DB_NAME;
-const dbUser = process.env.DB_USER;
-const dbPassword = process.env.DB_PASSWORD;
 
-// const URI = `postgres://${dbUser}:${dbPassword}@${dbHost}/${dbName}`;
-const URI = 'postgres://anastasiia.yuzyfyshyn.ki.2020:MlFYvUo12XCx@ep-delicate-morning-258831.eu-central-1.aws.neon.tech/neondb';
+const dbUrl = process.env.DB_URL
+const URI = `${dbUrl}`;
 
 export const dbInit = () => {
   const db = new Sequelize(

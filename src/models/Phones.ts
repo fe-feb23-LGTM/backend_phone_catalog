@@ -1,58 +1,56 @@
 import { dbInit } from '../dbInit';
-const { DataTypes } = require('sequelize');
+import { DataType } from 'sequelize-typescript';
 const seq = dbInit();
 
-const Phones = seq.define('User', {
+export const Phones = seq.define('User', {
   id: {
-    type: DataTypes.INTEGER,
+    type: DataType.INTEGER,
     allowNull: false,
     primaryKey: true,
   },
   category: {
-    type: DataTypes.STRING,
+    type: DataType.STRING,
     allowNull: false,
   },
   phoneId: {
-    type: DataTypes.STRING,
+    type: DataType.STRING,
     allowNull: false,
   },
   name: {
-    type: DataTypes.STRING,
+    type: DataType.STRING,
     allowNull: false,
   },
   fullPrice: {
-    type: DataTypes.INTEGER,
+    type: DataType.INTEGER,
     allowNull: false,
   },
   price: {
-    type: DataTypes.INTEGER,
+    type: DataType.INTEGER,
   },
   screen: {
-    type: DataTypes.STRING,
+    type: DataType.STRING,
     allowNull: false,
   },
   capacity: {
-    type: DataTypes.STRING,
+    type: DataType.STRING,
     allowNull: false,
   },
   color: {
-    type: DataTypes.STRING,
+    type: DataType.STRING,
   },
   ram: {
-    type: DataTypes.STRING,
+    type: DataType.STRING,
     allowNull: false,
   },
   year: {
-    type: DataTypes.INTEGER,
+    type: DataType.INTEGER,
     allowNull: false,
   },
   image: {
-    type: DataTypes.STRING,
+    type: DataType.STRING,
   },
 }, {
   tableName: 'phones',
   updatedAt: false,
   createdAt: false,
 });
-
-module.exports = { Phones };
