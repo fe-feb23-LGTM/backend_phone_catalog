@@ -1,12 +1,21 @@
 'use strict';
 
-const { User } = require('./models/User');
-const { dbInit } = require('./dbInit');
+import { dbInit } from './dbInit';
+import { Phones } from './models/Phones';
+import phones from './phones/phones.json'
+
+
+
+const seeedInitialData = async() => {
+  await Phones.bulkCreate(phones)
+}
 
 const setup = async() => {
   dbInit();
 
-  await User.sync({ force: true });
+  await Phones.sync({ force: true });
+
+  await seeedInitialData();
 };
 
 setup();

@@ -6,12 +6,13 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
     "outDir": "dist",
     "baseUrl": ".",
     "paths": {
       "*": ["node_modules/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/setup.ts", "src/dbInit.ts", "src/app.ts", "src/models/User.ts"],
+  "include": ["src/**/*.ts", "src/setup.ts", "src/dbInit.ts", "src/app.ts", "src/models/Phones.ts"],
   "exclude": ["node_modules"]
 }
