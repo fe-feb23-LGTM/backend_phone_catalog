@@ -5,9 +5,9 @@ import { getAllPhones, getPhoneById } from './Controllers/phones';
 const app = express();
 const port = process.env.PORT;
 
-app.get('/products', getAllPhones);
+app.get('/phones', getAllPhones);
 
-app.get('/products/:phoneId', getPhoneById);
+app.get('/phones/:phoneId', getPhoneById);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

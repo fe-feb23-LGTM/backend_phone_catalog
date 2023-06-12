@@ -23,19 +23,30 @@ export const getPhoneById = async(req: Request, res: Response) => {
     res.status(200).send(phones);
   };
 
-export const getAllPhones = async (req: Request, res: Response) => {
-  const {
-    sortBy,
-    sortOrder,
-    from,
-    to,
-  } = req.query;
-
-  const phones = await Phones.findAll({
-    order: [[`${sortBy}`, `${sortOrder}`]],
-    offset: Number(from),
-    limit: Number(to),
-  });
-
-  res.send(phones);
-};
+  export const getAllPhones = async (req: Request, res: Response) => {
+    const {
+      sortBy = 'price',
+      sortOrder = 'ASC',
+      from,
+      to,
+    } = req.query;
+  
+    let offset = 0;
+    let limit;
+  
+    if (from) {
+      offset = Number(from);
+    }
+  
+    if (to) {
+      limit = Number(to);
+    }
+  
+    const phones = await Phones.findAll({
+      order: [[`${sortBy}`, `${sortOrder}`]],
+      offset,
+      limit,
+    });
+  
+    res.send(phones);
+  };
