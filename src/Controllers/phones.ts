@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { Phones } from '../../src/Models/Phones';
+import { Phones } from '../Models/Phones';
 
 
 
