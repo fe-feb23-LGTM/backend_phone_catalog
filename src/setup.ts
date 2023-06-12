@@ -1,10 +1,6 @@
-'use strict';
-
 import { dbInit } from './dbInit';
-import { Phones } from './models/Phones';
+import { Phones } from './Models/Phones';
 import phones from './phones/phones.json'
-
-
 
 const seeedInitialData = async() => {
   await Phones.bulkCreate(phones)
