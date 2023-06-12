@@ -2,7 +2,6 @@ import { Request, Response } from 'express';
 import { Phones } from '../models/Phones';
 
 
-
 export const getPhoneById = async(req: Request, res: Response) => {
     const { phoneId } = req.params;
     const regex = /^\d+$/;
