@@ -13,6 +13,6 @@
       "*": ["node_modules/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/setup.ts", "src/dbInit.ts", "src/app.ts", "src/models/Phones.ts"],
+  "include": ["src/**/*.ts", "src/setup.ts", "src/dbInit.ts", "src/app.ts", "src/Models/Phones.ts"],
   "exclude": ["node_modules"]
 }
