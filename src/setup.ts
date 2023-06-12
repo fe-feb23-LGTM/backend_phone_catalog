@@ -1,5 +1,5 @@
-import { Phones } from './Models/Phones';
 import { dbInit } from './dbInit';
+import { Phones } from './models/Phones';
 import phones from './phones/phones.json'
 
 const seeedInitialData = async() => {
