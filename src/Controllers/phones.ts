@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
-import { Phones } from '../Models/Phones';
+import { Phones } from '../../src/Models/Phones';
+
 
 
 export const getPhoneById = async(req: Request, res: Response) => {
