@@ -1,6 +1,6 @@
 import express from 'express';
 import 'dotenv/config'
-import { getAllPhones, getPhoneById } from './controllers/phones';
+import { getAllPhones, getPhoneById } from './Сontrollers/phones';
 
 const app = express();
 const port = process.env.PORT;
