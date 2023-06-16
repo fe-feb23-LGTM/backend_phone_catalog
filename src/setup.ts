@@ -1,5 +1,6 @@
 import { dbInit } from './dbInit';
-import { Phones } from './models/Phones';
+import { Phones, PhonesAbout } from './models/Phones';
+import { parsePhoneDescriptions } from './phones/parseAndAddPhonesAbout';
 import phones from './phones/phones.json'
 
 const seeedInitialData = async() => {
@@ -10,8 +11,11 @@ const setup = async() => {
   dbInit();
 
   await Phones.sync({ force: true });
+  await PhonesAbout.sync({ force: true });
 
   await seeedInitialData();
+  await parsePhoneDescriptions();
 };
 
 setup();
+

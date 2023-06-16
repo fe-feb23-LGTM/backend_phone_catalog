@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { Phones } from '../models/Phones';
+import { Phones, PhonesAbout } from '../models/Phones';
 
 
 export const getPhoneById = async(req: Request, res: Response) => {
@@ -49,4 +49,24 @@ export const getPhoneById = async(req: Request, res: Response) => {
     });
   
     res.send(phones);
+  };
+
+  export const getPhoneAboutById = async(req: Request, res: Response) => {
+    const { phoneId } = req.params;
+  
+    if (!phoneId) {
+      res.sendStatus(400);
+  
+      return;
+    }
+  
+    const phoneAbout = await PhonesAbout.findByPk(phoneId);
+  
+    if (!phoneAbout) {
+      res.sendStatus(404);
+  
+      return;
+    }
+  
+    res.status(200).send(phoneAbout);
   };

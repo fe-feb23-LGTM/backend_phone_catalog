@@ -12,6 +12,7 @@ const port = process.env.PORT;
 app.use((0, cors_1.default)());
 app.get('/phones', phones_1.getAllPhones);
 app.get('/phones/:phoneId', phones_1.getPhoneById);
+app.get('/products/:phoneId', phones_1.getPhoneAboutById);
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });

@@ -27,6 +27,7 @@
     "sequelize": "^6.32.0",
     "sequelize-typescript": "^2.1.5",
     "sqlite3": "^5.1.6",
+    "ts-node": "^10.9.1",
     "tsc": "^2.0.4"
   },
   "devDependencies": {
