@@ -1,8 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 import { PhonesAbout } from '../models/Phones';
-// import { dbInit } from './dbInit';
-// import { Phones } from './models/Phones';
 
 export const parsePhoneDescriptions = async () => {
   const folderPath = path.join(__dirname, '../../src/phones/phonesAbout');
