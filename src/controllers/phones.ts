@@ -47,7 +47,7 @@ export const getPhoneById = async(req: Request, res: Response) => {
     const phones = await Phones.findAll({
       where: {
         phoneId: {
-          [Op.like]: `%${query}%`,
+          [Op.like]: `%${query ? query : 'apple'}%`,
         },
       },
       order: [[`${sortBy}`, `${sortOrder}`]],
