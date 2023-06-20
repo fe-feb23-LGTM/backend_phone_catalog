@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { Phones, PhonesAbout } from '../models/Phones';
+import { Op } from 'sequelize';
 
 
 export const getPhoneById = async(req: Request, res: Response) => {
@@ -29,6 +30,7 @@ export const getPhoneById = async(req: Request, res: Response) => {
       sortOrder = 'ASC',
       from,
       to,
+      query,
     } = req.query;
   
     let offset = 0;
@@ -43,6 +45,11 @@ export const getPhoneById = async(req: Request, res: Response) => {
     }
   
     const phones = await Phones.findAll({
+      where: {
+        name: {
+          [Op.like]: `%${query}%`,
+        },
+      },
       order: [[`${sortBy}`, `${sortOrder}`]],
       offset,
       limit,
