@@ -43,13 +43,21 @@ export const getPhoneById = async(req: Request, res: Response) => {
     if (to) {
       limit = Number(to);
     }
+
+    const whereCondition = query
+    ? {
+        phoneId: {
+          [Op.like]: `%${query}%`,
+        },
+      }
+    : {
+        phoneId: {
+          [Op.ne]: null,
+        },
+      };
   
     const phones = await Phones.findAll({
-      where: {
-        phoneId: {
-          [Op.like]: `%${query ? query : 'apple'}%`,
-        },
-      },
+      where: whereCondition,
       order: [[`${sortBy}`, `${sortOrder}`]],
       offset,
       limit,
