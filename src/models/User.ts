@@ -1,17 +1,34 @@
+import { Model, DataTypes } from 'sequelize';
 import { dbInit } from '../dbInit';
-import { DataType } from 'sequelize-typescript';
-const seq = dbInit();
 
-export const User = seq.define('User', {
-  email: {
-    type: DataType.STRING,
-    allowNull: false,
-    unique: true,
+const sequelize = dbInit();
+
+interface UserAttributes {
+  email: string;
+  password: string;
+}
+
+class User extends Model<UserAttributes> implements UserAttributes {
+  public email!: string;
+  public password!: string;
+}
+
+User.init(
+  {
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
   },
-  password: {
-    type: DataType.STRING,
-    allowNull: false,
+  {
+    sequelize,
+    tableName: 'users',
   }
-}, {
-  tableName: 'users',
-});
+);
+
+export { User };
