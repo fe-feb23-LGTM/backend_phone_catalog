@@ -2,7 +2,8 @@ import { dbInit } from '../dbInit';
 import { DataType } from 'sequelize-typescript';
 const seq = dbInit();
 
-export const Phones = seq.define('User', {
+
+export const Phones = seq.define('Phone', {
   id: {
     type: DataType.INTEGER,
     allowNull: false,
