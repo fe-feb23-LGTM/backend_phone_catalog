@@ -52,7 +52,7 @@ export const getPhoneById = async(req: Request, res: Response) => {
       }
     : {
         phoneId: {
-          [Op.ne]: null,
+          [Op.ne]: 'apple',
         },
       };
   
